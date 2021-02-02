@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,16 +7,23 @@
   /* border: 1px solid red; */
 }
 
+::selection {
+  background: #ed4c64;
+  color: #fbeee8;
+}
+
 body {
+  font-family: 'Big Shoulders Display', 'Roboto', sans-serif;
+  font-weight: 700;
   background: #bad;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-.add {
+.form {
   margin-bottom: 2rem;
   display: flex;
   align-self: center;
@@ -41,11 +50,65 @@ body {
 }
 
 .color__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem; 
+}
+
+.color__box {
+  width: 64px;height: 64px;
+  border-radius: 50%;
+
+
+}
+.color__text {
+  opacity: 0;
+  padding: 0.6rem 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.4px;
+  user-select: all;
+}
+
+.color__box:hover ~ .color__text {
+  opacity: 1;
+}
+/* 
+.color__block {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.color__box {
+  width: 64px;
+  height: 64px;
+  background: #541eac;
+  border: 2px dashed non;
+  
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 0px 0 white, inset -2px -2px 0px 0 white,
+    inset 2px -2px 0px 0 white, inset -2px 2px 0px 0 white;
+}
+
+.color__text {
+  font-size: 1rem;
+  border: 2px solid #e8e8e0;
+  border-left: solid transparent;
+  padding: 0.6rem;
+  padding-right: 2rem;
+  border-radius: 0 20px 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+} */
+
+/* 
+.color__block {
   min-width: 150px;
   height: 28px;
   border: 1px solid #e8e8e8;
   display: flex;
-  /* align-items: center; */
 }
 
 .color__box {
@@ -56,4 +119,4 @@ body {
 .color__text {
   text-align: center;
     flex: 1;
-}
+} */

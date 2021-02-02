@@ -9,16 +9,15 @@
     </head>
 
     <body>
-        <form class="add">
-            <input type="text" class="input" placeholder="Drop a color Name" required aria-label="true" />
+        <form class="form">
+
+  <!-- regex check for colors found at https://regexr.com/39cgj -->
+            <input type="text" class="input" placeholder="Drop a color value" pattern="(?:#|0x)(?:[a-f0-9]{3}|[a-f0-9]{6})\b|(?:rgb|hsl)a?\([^\)]*\)" required aria-label="true" aria-required="true" />
             <input type="submit" class="btn button" value="ADD" aria-label="true">
         </form>
 
         <section class="list">
-            <li class="color__block">
-                <div class="color__box"></div>
-                <div class="color__text">asfafs</div>
-            </li>
+            
         </section>
 
 

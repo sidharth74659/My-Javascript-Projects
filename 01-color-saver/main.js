@@ -1,81 +1,60 @@
-const input = document.querySelector(".input");
-const list = document.querySelector(".list");
-const form = document.querySelector(".add");
-const colorArray = [localStorage.getItem("colors")] || [];
+const form = document.querySelector(".form");
+ const list = document.querySelector(".list");
+ const colorArray = JSON.parse(localStorage.getItem("colorArray")) || [];
+ const input = document.querySelector(".input");
 
-loadHTML(colorArray);
 
-form.addEventListener("submit", addColor);
+populateList(colorArray, list);
 
-function addColor(e) {
-  // prevent page from reload
+ function addItem(e) {
+   e.preventDefault();
+   const colorName = input.value;
+   const item = { colorName,};
+   validateColor(colorName);
+   colorArray.push(item);
+   populateList(colorArray, list);
+   localStorage.setItem("colorArray", JSON.stringify(colorArray));
+   form.reset();
+ }
 
-  e.preventDefault();
+function populateList(colorArray, list) {
+  const uniqueColors = getUniqueListBy(colorArray, "colorName");
 
-  const input__value = input.value;
-  // console.log(colorArray)
-  colorArray.push(input__value);
-  localStorage.setItem("colors", colorArray);
-
-  // loadHTML
-  loadHTML(colorArray);
-  // clear the form field
-  form.reset();
+  list.innerHTML = uniqueColors.map((color, i) => {
+       return `
+       <div class="color__block">
+          <div style="background:${color.colorName}" class="color__box"></div>
+          <div class="color__text">${color.colorName}</div>
+        </div>`;
+     })
+     .join("");
 }
 
-function loadHTML(colorArray) {
-  list.innerHTML = "";
-  console.log(colorArray);
+form.addEventListener("submit", addItem);
 
-  colorArray.forEach((c) => {
-    list.innerHTML += `<div class="color__block">
-      <div style="background:${c}" class="color__box"></div>
-      <div class="color__text">${c}</div>
-      </div>`;
-  });
+// Found in stackoverflow https://stackoverflow.com/questions/2218999/remove-duplicates-from-an-array-of-objects-in-javascript#answer-56768137:~:text=function%3A-,function%20getUniqueListBy(arr%2C%20key)%20%7B,%7D
+
+function getUniqueListBy(arr, key) {
+    return [...new Map(arr.map(item => [item[key], item])).values()]
+}
+
+function validateColor(colorName) {
+ 
+}
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
 }
 
 
-
-
-// const input = document.querySelector(".input");
-// const list = document.querySelector(".list");
-// const form = document.querySelector(".add");
-// const colorArray = JSON.parse(localStorage.getItem("colors")) || [];
-
-// loadHTML(colorArray);
-
-// form.addEventListener("submit", addColor);
-
-// function addColor(e) {
-//   // prevent page from reload
-
-//   e.preventDefault();
-
-//   const input__value = input.value;
-//   let color = {
-//     color: input__value,
-//   };
-//   // push the color to a localBucket(array)
-//   colorArray.push(color);
-//   // send that array to localStorage
-//   localStorage.setItem("colors", JSON.stringify(colorArray));
-
-//   // loadHTML
-//   loadHTML(colorArray);
-//   // clear the form field
-//   form.reset();
-// }
-
-// function loadHTML(colorArray) {
-//   list.innerHTML = "";
-//   console.log(colorArray)
-  
-  
-//     colorArray.filter(Boolean).forEach((c) => {
-//       list.innerHTML += `<div class="color__block">
-//       <div style="background:${c.color}" class="color__box"></div>
-//       <div class="color__text">${c.color}</div>
-//       </div>`;
-//     });
-// }
+console.log()
