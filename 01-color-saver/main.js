@@ -23,7 +23,10 @@ function populateList(colorArray, list) {
   list.innerHTML = uniqueColors.map((color, i) => {
        return `
        <div class="color__block">
-          <div style="background:${color.colorName}" class="color__box"></div>
+          <div style="background:${color.colorName}" class="color__box">
+          <i class="fas fa-copy"></i>
+          </div>
+          
           <div class="color__text">${color.colorName}</div>
         </div>`;
      })
