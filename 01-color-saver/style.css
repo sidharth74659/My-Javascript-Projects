@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 ::selection {
@@ -71,30 +71,54 @@ body {
   align-items: center;
 }
 .color__box:hover::after {
-    content: "";
+   font-family: "Font Awesome 5 Free"; font-weight: 400; 
+  font-size: 1.5rem;
+  content: "\f0c5";
+  color :white;
+  background: transparent;
+    border-radius: 50%;
+  z-index: 100;
+
+  position: absolute;
+  cursor: pointer;
+  padding: 5rem;
+  
+      top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+  
+    /* content: "";
     background: #776565ab;
     cursor: pointer;
     z-index: 1;
     width: 64px;
     height: 64px;
-    margin: 0 auto;
+    margin: 0 auto; */
 }
 .color__text {
   opacity: 0;
-  padding: 0.6rem 0;
+  padding: 0.8rem 0;
   text-transform: uppercase;
   font-size: 1.2rem;
   letter-spacing: 0.4px;
   user-select: all;
-}
 
+
+  border: none;
+  background: none;
+  font-family: "Big Shoulders Display", "Roboto", sans-serif;
+  text-align: center;
+
+}
+/* 
 .fa-copy {
   opacity: 0;
   font-size: 1.5rem;
   color: white;
   position: absolute;
   z-index: 100;
-}
+} */
 
 .color__box:hover .fa-copy{
   opacity: 1;
@@ -102,4 +126,9 @@ body {
 
 .color__box:hover ~ .color__text {
   opacity: 1;
+}
+.color__box:hover {
+    opacity: 0.3;
+  background: red;
+
 }
