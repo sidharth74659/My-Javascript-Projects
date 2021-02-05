@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>colorSaver</title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorSaver</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-    <body>
-        <form class="form">
+  <body>
+    <main class="container">
+      <form class="form">
 
-  <!-- regex check for colors found at https://regexr.com/39cgj -->
-            <input type="text" class="input" placeholder="Drop a color value" pattern="(?:#|0x)(?:[a-f0-9]{3}|[a-f0-9]{6})\b|(?:rgb|hsl)a?\([^\)]*\)" required aria-label="true" aria-required="true" />
-            <input type="submit" class="btn button" value="ADD" aria-label="true">
-        </form>
+        <!-- regex check for colors found at https://regexr.com/39cgj -->
+        <input type="text" class="input" placeholder="Color Value"
+          pattern="(?:#|0x)(?:[a-f0-9]{3}|[a-f0-9]{6})\b|(?:rgb|hsl)a?\([^\)]*\)" required aria-label="true"
+          aria-required="true" />
+        <input type="submit" class="btn button" value="ADD" aria-label="true">
+      </form>
 
-        <section class="list">
-            
-        </section>
+      <ul class="color-list">
+
+      </ul>
 
 
 
-        <script src="main.js"></script>
-    </body>
+      <p class="copied">Color copied!</p>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
 
 </html>
