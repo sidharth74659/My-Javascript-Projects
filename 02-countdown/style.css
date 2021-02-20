@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "oswald", "inter", sans-serif;
+}
+
+body {
+  background: #4b5a5d;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.container,
+.btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.section {
+  background: #495055;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.text {
+  font-size: 1rem;
+  color: #637c81;
+  transform: rotate(270deg);
+  transform-origin: left;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.count {
+  font-size: 4.5rem;
+  color: #d42e5b;
+  text-align: center;
+  margin: 1rem 1rem 0 1.5rem;
+}
+
+.btn {
+  border: none;
+  /* outline: none; */
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  color: #d42e5b;
+  font-size: 1.5rem;
+  cursor: pointer;
+    background: #fff;
+  margin: 0.2rem;
+  backface-visibility: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.07);
+}
+
+.btn:active {
+  transform: scale(1.04);
+  transition: transform 0.2s ease;
+}
+
+.btns .btn:disabled {
+    background: #c2c2c286;
+  color: #e8e8e891;
+}
+.btn:disabled:hover, .btn:disabled:hover:focus {
+  transform: scale(1);
+}
+
+.btn.radio:hover,
+.btn.radio:focus {
+  transform: scale(1.04);
+}
+
+
+.input {
+  opacity: 0;
+  width: 0;height: 0;
+}
+
+label.btn.radio {
+  display: inline-block;
+}
+
+.input:checked + label.btn.radio {
+  transform: scale(1.08);
+  background: #e8e888;
+  color: #333;
+
+}
+
+.label:hover,
+.label:focus {
+  transform: scale(1.06);
+}
+
+.input:not(:checked) + label {
+  background: #333;
+  color:#f6efe8;
+}
+
+.input:disabled + label {
+  background: #c2c2c286;
+  color: #e8e8e891;
+}
+.input:disabled + label:hover, label:focus {
+  transform: scale(1);
+}
