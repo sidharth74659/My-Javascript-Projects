@@ -13,19 +13,29 @@
 
         <form class="timer">
             <input type="radio" class="input" name="radio" value="5" id="value1">
-            <label class="btn radio" for="value1">5 minutes</label>
+            <label class="radio" for="value1">5 minutes</label>
             <input type="radio" class="input" name="radio" value="10" id="value2">
-            <label class="btn radio" for="value2">10 minutes</label>
+            <label class="radio" for="value2">10 minutes</label>
             <input type="radio" class="input" name="radio" value="15" id="value3" checked>
-            <label class="btn radio" for="value3">15 minutes</label>
-            <!-- <button class="btn five">5 minutes</button>
-            <button class="btn ten">10 minutes</button>
-            <button class="btn fifteen">15 minutes</button> -->
+            <label class="radio" for="value3">15 minutes</label>
         </form>
+
         <div class="btns">
-            <button class="btn start">start</button>
-            <button class="btn reset" disabled>reset</button>
+            <button class="btn js-start">start</button>
+            <button class="btn js-reset" disabled>reset</button>
         </div>
+
+        <div class="container">
+            <section class="section">
+                <div class="count js-mins">00</div>
+                <div class="text">MINUTES</div>
+            </section>
+            <section class="section">
+                <div class="count js-seconds">00</div>
+                <div class="text">SECONDS</div>
+            </section>
+        </div>
+
         <!-- 
             <div class="container">
             <section class="section">
@@ -42,18 +52,6 @@
             </section>
         </div> 
         -->
-        <div class="container">
-            <section class="section">
-                <div class="count mins__count">00</div>
-                <div class="text">MINUTES</div>
-            </section>
-            <section class="section">
-                <div class="count seconds__count">00</div>
-                <div class="text">SECONDS</div>
-            </section>
-        </div>
-
-
         <footer class="credits">
             <p>Design is from <a href="https://www.uidesigndaily.com/uploads/14/day_14.jpg">uidesigndaily</a></p>
         </footer>

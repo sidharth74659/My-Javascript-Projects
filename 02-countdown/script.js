@@ -1,8 +1,8 @@
-const mins__count = document.querySelector('.mins__count');
-const seconds__count = document.querySelector('.seconds__count');
+const mins__count = document.querySelector('.js-mins');
+const seconds__count = document.querySelector('.js-seconds');
 
-const start = document.querySelector('.start');
-const reset = document.querySelector('.reset');
+const start = document.querySelector('.js-start');
+const reset = document.querySelector('.js-reset');
 
 var time = document.forms[0].elements['radio'].value;
 
@@ -16,9 +16,9 @@ let minute = time;
 document.querySelector('.timer').addEventListener('change', () => {
 
     globalThis.time = document.forms[0].elements['radio'].value;
-    mins__count.innerHTML = time;
+    mins__count.innerHTML = addZero(time);
 })
-mins__count.innerHTML = time;
+mins__count.innerHTML = addZero(time);
 seconds__count.innerHTML = "00";
 
 start.addEventListener('click', startTimer);
@@ -48,8 +48,8 @@ function stopTimer() {
     second = 3;
     minute = time;
 
-    mins__count.innerHTML = minute;
-    seconds__count.innerHTML = 0;
+    mins__count.innerHTML = addZero(minute);
+    seconds__count.innerHTML = addZero(0);
 
     start.disabled = false;
     reset.disabled = true;
@@ -74,15 +74,16 @@ function seconds() {
         second = 59;
         // console.log(typeof +minute);
         // console.log(typeof +minute, "increment");
+        // console.log(typeof +minute, "increment");
         minute = +minute - 1;
         if (minute < 0) {
             stopTimer();
             return false;
         }
-        mins__count.innerHTML = minute;
+        mins__count.innerHTML = addZero(minute);
     }
 
-    seconds__count.innerHTML = second;
+    seconds__count.innerHTML = addZero(second);
     console.log({ minute, second });
 }
 
@@ -94,7 +95,9 @@ function seconds() {
 // radios.value = 'red';
 
 
-
+function addZero(number) {
+    return number < 10 ? '0' + number : number;
+}
 
 
 
